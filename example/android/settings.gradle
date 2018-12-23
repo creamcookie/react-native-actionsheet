@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+include ':react-native-ccs-actionsheet'
+project(':react-native-ccs-actionsheet').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ccs-actionsheet/android')
+
+include ':app'
