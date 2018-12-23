@@ -23,7 +23,13 @@ export default class App extends Component<Props> {
 	}
 
 	showActionSheet() {
-		ActionSheet.show(["AAA", "BBB"]);
+		ActionSheet.show(["Reload", "Stop Remote JS Debugging", "Enable Live Reload", "Enable Hot Reloading", "Toggle ", "Show Pref", "Start/"], 1)
+			.then(r => {
+				alert(JSON.stringify(r));
+			})
+			.catch(e => {
+//				alert("error..");
+			});
 	}
 
 	render() {

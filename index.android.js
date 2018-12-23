@@ -14,7 +14,8 @@ class CCSActionSheet {
 			title : etc?.title,
 			options: buttons,
 			cancelButtonIndex: buttons.length - 1,
-			destructiveButtonIndex: index
+			destructiveButtonIndex: index,
+			tintColor: '#000',
 		});
 
 	}
