@@ -3,6 +3,12 @@ import { NativeModules, ActionSheetIOS, Platform } from 'react-native';
 
 class CCSActionSheet {
 
+	defCancel = 'Cancel';
+
+	setDefaultCancel(cancel:String) {
+		this.defCancel = cancel;
+	}
+
 	show(options, index = -1, etc = { title: '', message: '', androidCancelHide: false, cancelLabel : '', tintColor: '' }) {
 
 		this.isOptionObject = (options?.length && options[0] instanceof Object);
@@ -18,7 +24,7 @@ class CCSActionSheet {
 
 		if (Platform.OS == 'ios' || !etc?.androidCancelHide) {
 			this.usedCancel = true;
-			buttons.push((etc?.cancelLabel ? etc?.cancelLabel : 'Cancel'));
+			buttons.push((etc?.cancelLabel ? etc?.cancelLabel : this.defCancel));
 		}
 		else {
 			this.usedCancel = false;
